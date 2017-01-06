@@ -61,11 +61,11 @@ int main(void) {
               std::ostream_iterator<float>{std::cout, ", "});
 
     std::cout << "\n"
-              << "min mark: " << *std::rbegin(group) << "\n"
-              << "max mark: " << *std::begin(group)  << "\n";
+              << "min mark: " << *std::begin(group) << "\n"
+              << "max mark: " << *std::rbegin(group)  << "\n";
 
     auto mid = std::lower_bound(std::begin(group), std::end(group), 50.0);
     std::cout << "failed: "    << std::distance(std::begin(group), mid)   << "\n"
-              << "succeeded: " << std::distance(mid - 1, std::end(group)) << "\n";
+              << "succeeded: " << std::distance(mid, std::end(group)) << "\n";
   }
 }
